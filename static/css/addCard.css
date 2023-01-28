@@ -37,6 +37,7 @@ div.add > input{
     /* font-size: 17px; */
     border-radius: 5px;
     border: 1px solid rgb(150, 150, 150);
+    background-color: red;
 }
 div.add > button{
     padding: 16px;
