@@ -1,0 +1,123 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-image: linear-gradient(to right, #46a3fe, #3066fe);
+}
+
+div.content{
+    /* border: 1px solid red; */
+    width: 30%;
+    background-color: white;
+    margin: auto;
+    margin-top: 50px;
+    box-shadow:  0 0 5px 0 black;
+    padding: 25px;
+    border-radius: 5px;
+}
+div.content > div{
+    /* border: 1px solid red; */
+    margin: 10px;
+    /* padding: 20px; */
+}
+div.add{
+    position: relative;
+    display: flex;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+div.add > input{
+    display: inline-block;
+    width: 90%;
+    padding: 15px;
+    padding-left: 50px;
+    /* font-size: 17px; */
+    border-radius: 5px;
+    border: 1px solid rgb(150, 150, 150);
+}
+div.add > button{
+    padding: 16px;
+    border-radius: 5px;
+    /* background-color: #3066fe; */
+    background-image: linear-gradient(to right, #46a3fe, #3066fe);
+    color: white;
+    border: none;
+    margin: 5px;
+}
+div.add > input:focus{
+    outline: 3px solid #3066fe;
+}
+div.add > i{
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    color: rgb(150, 150, 150);
+    font-size: 30px;
+}
+
+div.select{
+    display: flex;
+    font-size: 18px;
+}
+div.select > *{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+div.select > div:last-child{
+    flex-grow: 1;
+    justify-content: right;
+}
+div.select > div > *{
+    padding: 10px;
+}
+div.select > label:hover{
+    color: #3066fe;
+    cursor: pointer;
+}
+div.select > label > input{
+    display: none;
+}
+
+div.select > label > span{
+    border-bottom: 2px solid transparent;
+    padding-bottom: 5px;
+}
+
+div.select > label > input:checked + span{
+    color: #3066fe;
+    border-bottom: 2px solid #3066fe;
+}
+
+div.select > div > button{
+    padding: 10px;
+    background-image: linear-gradient(to right, #46a3fe, #3066fe);
+    color: white;
+    border: none;
+    font-weight: bold;
+}
+
+div.result{
+    /* border: 1px solid red; */
+}
+div.result > ul{
+    list-style-type: none;
+}
+div.result > ul > li{
+    display: flex;
+    /* padding: 0 10px; */
+    border-bottom: 1px solid rgb(150, 150, 150);
+}
+div.result > ul > li > *{
+    padding: 15px 10px;
+    margin: 5px;
+}
+
+::placeholder{
+    font-size: 18px;
+    color: rgb(150, 150, 150);
+    padding-left: 20px;
+}

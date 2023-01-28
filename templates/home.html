@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body{
+                background-color: #9dc9da;
+            }
+
+            div.table{
+                border: 1px solid rgb(200, 200, 200);
+                width: 24%;
+                height: 500px;
+                margin: auto;
+                border-radius: 20px;
+                margin-top: 150px;
+                overflow: hidden;
+            }
+            table{
+                height: 100%;
+                width: 100%;
+                text-align: center;
+                background-color: white;
+                border-radius: 10px;
+            }
+            th{
+                background-color: black !important;
+                color: white !important;
+            }
+            h2{
+                padding: 0;
+                margin: 0;
+                /* border: 1px solid red; */
+                text-align: right;
+                height: 50px;
+                
+            }
+            table, tr, td{
+                border: 1px solid rgb(100, 100, 100);
+                border-collapse: collapse;
+            }
+            tr:first-child > *{
+                padding: 20px;
+                background-color: rgb(220, 220, 220);
+                font-weight: bold;
+            }
+            td{
+                padding: 15px;
+            }
+            td:hover{
+                cursor: pointer;
+                background-color: rgb(200, 200, 200);
+            }
+        </style>
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="table">
+            <table>
+                <thead>
+                    <th colspan="4"><h2>0</h2></th>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>+</td>
+                        <td>-</td>
+                        <td>*</td>
+                        <td>/</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td rowspan="4" style="background-color: #f88764;">=</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">0</td>
+                        <!-- <td>.</td> -->
+                        <td>C</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+     
+
+        <script>
+            'use strict'
+            let result = document.getElementsByTagName('h2')[0];
+            let tds = document.getElementsByTagName('td');
+            let data = '';
+            for(let i of tds){
+                if(i.innerHTML == '='){
+                    i.addEventListener('click', (e)=>{
+                        let finish = eval(data)
+                        result.innerHTML = finish;
+                        data = finish;
+                    })
+                }else if(i.innerHTML.toLocaleLowerCase() == 'c'){
+                    i.addEventListener('click', (e)=>{
+                        let finish = ''
+                        result.innerHTML = '0';
+                        data = finish;
+                    })
+                }
+                else{
+                    i.addEventListener('click', (e)=>{
+                        data+=e.target.innerHTML;
+                        result.innerHTML = data;
+                    })
+                }
+            }
+        </script>
+    </body>
+</html>
